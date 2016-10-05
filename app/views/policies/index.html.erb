@@ -16,7 +16,7 @@
 
       <% @policies.each do |policy| %>
       <tr>
-        <td><%= policy.listing_id %></td>
+        <td><%= policy.listing.listing_title %></td>
         <td><%= policy.policies %></td>
         <td>
           <a href="/policies/<%= policy.id %>" class="btn btn-primary">Show</a>
