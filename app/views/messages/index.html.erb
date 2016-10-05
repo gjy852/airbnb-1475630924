@@ -20,7 +20,7 @@
 
       <% @messages.each do |message| %>
       <tr>
-        <td><%= message.initiated_by_id %></td>
+        <td><%= message.initiated_by.host %></td>
         <td><%= message.recipient_id %></td>
         <td><%= message.message_text %></td>
         <td><%= message.message_created_date %></td>
