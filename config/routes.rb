@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Neighbourhood resource:
+  # CREATE
+  get "/neighbourhoods/new", :controller => "neighbourhoods", :action => "new"
+  post "/create_neighbourhood", :controller => "neighbourhoods", :action => "create"
+
+  # READ
+  get "/neighbourhoods", :controller => "neighbourhoods", :action => "index"
+  get "/neighbourhoods/:id", :controller => "neighbourhoods", :action => "show"
+
+  # UPDATE
+  get "/neighbourhoods/:id/edit", :controller => "neighbourhoods", :action => "edit"
+  post "/update_neighbourhood/:id", :controller => "neighbourhoods", :action => "update"
+
+  # DELETE
+  get "/delete_neighbourhood/:id", :controller => "neighbourhoods", :action => "destroy"
+  #------------------------------
+
   # Routes for the City resource:
   # CREATE
   get "/cities/new", :controller => "cities", :action => "new"

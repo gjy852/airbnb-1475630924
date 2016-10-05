@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Neighbourhood #<%= @neighbourhood.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Neighbourhoods list</dt>
+      <dd><%= @neighbourhood.neighbourhoods_list %></dd>
+
+      <dt>City</dt>
+      <dd><%= @neighbourhood.city_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/neighbourhoods" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/neighbourhoods/<%= @neighbourhood.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_neighbourhood/<%= @neighbourhood.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
