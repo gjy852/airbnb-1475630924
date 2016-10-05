@@ -5,6 +5,10 @@ class GuestReview < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :requestor,
+             :through => :request,
+             :source => :requestor
+
   # Validations
 
 end

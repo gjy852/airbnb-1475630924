@@ -24,6 +24,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :review_ids,
+             :through => :requests,
+             :source => :review_id
+
   # Validations
 
 end
