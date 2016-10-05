@@ -19,7 +19,7 @@
 
       <% @requests.each do |request| %>
       <tr>
-        <td><%= request.requestor_id %></td>
+        <td><%= request.requestor.host %></td>
         <td><%= request.request_text %></td>
         <td><%= request.request_sent_date %></td>
         <td><%= request.request_accept_date %></td>
