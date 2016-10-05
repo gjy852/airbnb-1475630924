@@ -33,7 +33,7 @@
           Reservations
         </label>
 
-        <input type="text" id="reservations_id" name="reservations_id" placeholder="Reservations" class="form-control" value="<%= @listing_review.reservations_id %>">
+        <%= select_tag(:reservations_id, options_from_collection_for_select(Reservation.all, :id, :availability_date, @listing_review.reservations_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for listing_review_accuracy -->
