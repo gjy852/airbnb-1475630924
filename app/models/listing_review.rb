@@ -7,6 +7,10 @@ class ListingReview < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :listing,
+             :through => :listing_availability,
+             :source => :listing
+
   # Validations
 
 end

@@ -23,6 +23,10 @@ class Listing < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :listing_reviews,
+             :through => :listing_availabilities,
+             :source => :listing_review
+
   # Validations
 
 end
