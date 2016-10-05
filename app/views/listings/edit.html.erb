@@ -105,7 +105,7 @@
           Neighbourhood
         </label>
 
-        <input type="text" id="neighbourhood_id" name="neighbourhood_id" placeholder="Neighbourhood" class="form-control" value="<%= @listing.neighbourhood_id %>">
+        <%= select_tag(:neighbourhood_id, options_from_collection_for_select(Neighbourhood.all, :id, :neighbourhoods_list, @listing.neighbourhood_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for policies_id -->
