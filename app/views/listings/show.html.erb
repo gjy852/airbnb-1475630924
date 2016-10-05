@@ -1,0 +1,61 @@
+<div class="page-header">
+  <h3>Listing #<%= @listing.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Listing title</dt>
+      <dd><%= @listing.listing_title %></dd>
+
+      <dt>Listing description</dt>
+      <dd><%= @listing.listing_description %></dd>
+
+      <dt>Room or home</dt>
+      <dd><%= @listing.room_or_home %></dd>
+
+      <dt>Listing photos</dt>
+      <dd><%= @listing.listing_photos_id %></dd>
+
+      <dt>Num of bedroom</dt>
+      <dd><%= @listing.num_of_bedroom %></dd>
+
+      <dt>Num of bathroom</dt>
+      <dd><%= @listing.num_of_bathroom %></dd>
+
+      <dt>Number of beds</dt>
+      <dd><%= @listing.number_of_beds %></dd>
+
+      <dt>Max occupant</dt>
+      <dd><%= @listing.max_occupant %></dd>
+
+      <dt>City</dt>
+      <dd><%= @listing.city_id %></dd>
+
+      <dt>Neighbourhood</dt>
+      <dd><%= @listing.neighbourhood_id %></dd>
+
+      <dt>Policies</dt>
+      <dd><%= @listing.policies_id %></dd>
+
+      <dt>Default price</dt>
+      <dd><%= @listing.default_price %></dd>
+
+      <dt>Host</dt>
+      <dd><%= @listing.host_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/listings" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/listings/<%= @listing.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_listing/<%= @listing.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
