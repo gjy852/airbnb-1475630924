@@ -16,7 +16,7 @@
 
       <% @listing_photos.each do |listing_photo| %>
       <tr>
-        <td><%= listing_photo.listing_id %></td>
+        <td><%= listing_photo.listing.listing_title %></td>
         <td><%= listing_photo.listing_photos %></td>
         <td>
           <a href="/listing_photos/<%= listing_photo.id %>" class="btn btn-primary">Show</a>
