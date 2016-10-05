@@ -25,7 +25,7 @@
       <% @listing_reviews.each do |listing_review| %>
       <tr>
         <td><%= listing_review.create_listing_review_date %></td>
-        <td><%= listing_review.reservations_id %></td>
+        <td><%= listing_review.listing_availability.availability_date %></td>
         <td><%= listing_review.listing_review_accuracy %></td>
         <td><%= listing_review.listing_review_communication %></td>
         <td><%= listing_review.listing_review_cleanliness %></td>
