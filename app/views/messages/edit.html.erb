@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @message.errors.any? %>
+  <% @message.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Message #<%= @message.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_message/<%= @message.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for initiated_by_id -->
+      <div class="form-group">
+        <label for="initiated_by_id" class="control-label">
+          Initiated by
+        </label>
+
+        <input type="text" id="initiated_by_id" name="initiated_by_id" placeholder="Initiated by" class="form-control" value="<%= @message.initiated_by_id %>">
+      </div>
+
+      <!-- Label and input for recipient_id -->
+      <div class="form-group">
+        <label for="recipient_id" class="control-label">
+          Recipient
+        </label>
+
+        <input type="text" id="recipient_id" name="recipient_id" placeholder="Recipient" class="form-control" value="<%= @message.recipient_id %>">
+      </div>
+
+      <!-- Label and input for message_text -->
+      <div class="form-group">
+        <label for="message_text" class="control-label">
+          Message text
+        </label>
+
+        <input type="text" id="message_text" name="message_text" placeholder="Message text" class="form-control" value="<%= @message.message_text %>">
+      </div>
+
+      <!-- Label and input for message_created_date -->
+      <div class="form-group">
+        <label for="message_created_date" class="control-label">
+          Message created date
+        </label>
+
+        <input type="text" id="message_created_date" name="message_created_date" placeholder="Message created date" class="form-control" value="<%= @message.message_created_date %>">
+      </div>
+
+      <!-- Label and input for message_edited_date -->
+      <div class="form-group">
+        <label for="message_edited_date" class="control-label">
+          Message edited date
+        </label>
+
+        <input type="text" id="message_edited_date" name="message_edited_date" placeholder="Message edited date" class="form-control" value="<%= @message.message_edited_date %>">
+      </div>
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @message.listing_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Message
+      </button>
+      or
+      <a href="/messages/<%= @message.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

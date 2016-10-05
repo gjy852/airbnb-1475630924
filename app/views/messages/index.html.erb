@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Messages
+    <a href="/messages/new" class="btn btn-lg btn-success">New Message</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Initiated by</th>
+        <th>Recipient</th>
+        <th>Message text</th>
+        <th>Message created date</th>
+        <th>Message edited date</th>
+        <th>Listing</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.initiated_by_id %></td>
+        <td><%= message.recipient_id %></td>
+        <td><%= message.message_text %></td>
+        <td><%= message.message_created_date %></td>
+        <td><%= message.message_edited_date %></td>
+        <td><%= message.listing_id %></td>
+        <td>
+          <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
+          <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
