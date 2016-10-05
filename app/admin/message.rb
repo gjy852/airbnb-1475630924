@@ -1,5 +1,7 @@
 ActiveAdmin.register Message do
 
+ permit_params :initiated_by_id, :recipient_id, :message_text, :message_created_date, :message_edited_date, :listing_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
