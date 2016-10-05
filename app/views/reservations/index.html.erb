@@ -20,7 +20,7 @@
       <tr>
         <td><%= reservation.availability_date %></td>
         <td><%= reservation.availability_price %></td>
-        <td><%= reservation.listing_id %></td>
+        <td><%= reservation.listing.listing_title %></td>
         <td><%= reservation.booked_yes_or_no_id %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
