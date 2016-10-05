@@ -1,5 +1,7 @@
 ActiveAdmin.register ListingPhoto do
 
+ permit_params :listing_id, :listing_photos
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
