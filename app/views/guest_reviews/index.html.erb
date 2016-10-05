@@ -19,7 +19,7 @@
       <% @guest_reviews.each do |guest_review| %>
       <tr>
         <td><%= guest_review.create_guest_review_date %></td>
-        <td><%= guest_review.request_id %></td>
+        <td><%= guest_review.request.requestor_id %></td>
         <td><%= guest_review.rating %></td>
         <td><%= guest_review.review_text %></td>
         <td>
