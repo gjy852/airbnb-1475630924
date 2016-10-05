@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @guest_review.errors.any? %>
+  <% @guest_review.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Guest Review</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_guest_review" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for create_guest_review_date -->
+      <div class="form-group">
+        <label for="create_guest_review_date" class="control-label">
+          Create guest review date
+        </label>
+
+        <input type="text" id="create_guest_review_date" name="create_guest_review_date" placeholder="Create guest review date" class="form-control" value="<%= @guest_review.create_guest_review_date %>">
+      </div>
+
+      <!-- Label and input for request_id -->
+      <div class="form-group">
+        <label for="request_id" class="control-label">
+          Request
+        </label>
+
+        <input type="text" id="request_id" name="request_id" placeholder="Request" class="form-control" value="<%= @guest_review.request_id %>">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @guest_review.rating %>">
+      </div>
+
+      <!-- Label and input for review_text -->
+      <div class="form-group">
+        <label for="review_text" class="control-label">
+          Review text
+        </label>
+
+        <textarea id="review_text" name="review_text" placeholder="Review text" class="form-control" rows="3"><%= @guest_review.review_text %></textarea>
+      </div>
+
+      <button class="btn btn-success">
+        Create Guest Review
+      </button>
+      or
+      <a href="/guest_reviews">Cancel</a>
+    </form>
+  </div>
+</div>

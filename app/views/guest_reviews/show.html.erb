@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Guest Review #<%= @guest_review.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Create guest review date</dt>
+      <dd><%= @guest_review.create_guest_review_date %></dd>
+
+      <dt>Request</dt>
+      <dd><%= @guest_review.request_id %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @guest_review.rating %></dd>
+
+      <dt>Review text</dt>
+      <dd><%= @guest_review.review_text %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/guest_reviews" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/guest_reviews/<%= @guest_review.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_guest_review/<%= @guest_review.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

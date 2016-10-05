@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Guest reviews
+    <a href="/guest_reviews/new" class="btn btn-lg btn-success">New Guest review</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Create guest review date</th>
+        <th>Request</th>
+        <th>Rating</th>
+        <th>Review text</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @guest_reviews.each do |guest_review| %>
+      <tr>
+        <td><%= guest_review.create_guest_review_date %></td>
+        <td><%= guest_review.request_id %></td>
+        <td><%= guest_review.rating %></td>
+        <td><%= guest_review.review_text %></td>
+        <td>
+          <a href="/guest_reviews/<%= guest_review.id %>" class="btn btn-primary">Show</a>
+          <a href="/guest_reviews/<%= guest_review.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_guest_review/<%= guest_review.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
