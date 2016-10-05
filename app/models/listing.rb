@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  belongs_to :host,
+             :class_name => "User"
+
   has_many   :listing_photos,
              :dependent => :destroy
 
