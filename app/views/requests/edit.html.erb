@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @request.errors.any? %>
+  <% @request.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Request #<%= @request.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_request/<%= @request.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for requestor_id -->
+      <div class="form-group">
+        <label for="requestor_id" class="control-label">
+          Requestor
+        </label>
+
+        <input type="text" id="requestor_id" name="requestor_id" placeholder="Requestor" class="form-control" value="<%= @request.requestor_id %>">
+      </div>
+
+      <!-- Label and input for request_text -->
+      <div class="form-group">
+        <label for="request_text" class="control-label">
+          Request text
+        </label>
+
+        <textarea id="request_text" name="request_text" placeholder="Request text" class="form-control" rows="3"><%= @request.request_text %></textarea>
+      </div>
+
+      <!-- Label and input for request_sent_date -->
+      <div class="form-group">
+        <label for="request_sent_date" class="control-label">
+          Request sent date
+        </label>
+
+        <input type="text" id="request_sent_date" name="request_sent_date" placeholder="Request sent date" class="form-control" value="<%= @request.request_sent_date %>">
+      </div>
+
+      <!-- Label and input for request_accept_date -->
+      <div class="form-group">
+        <label for="request_accept_date" class="control-label">
+          Request accept date
+        </label>
+
+        <input type="text" id="request_accept_date" name="request_accept_date" placeholder="Request accept date" class="form-control" value="<%= @request.request_accept_date %>">
+      </div>
+
+      <!-- Label and input for availability_date -->
+      <div class="form-group">
+        <label for="availability_date" class="control-label">
+          Availability date
+        </label>
+
+        <input type="text" id="availability_date" name="availability_date" placeholder="Availability date" class="form-control" value="<%= @request.availability_date %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Request
+      </button>
+      or
+      <a href="/requests/<%= @request.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
