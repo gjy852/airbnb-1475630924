@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Listing Photo #<%= @listing_photo.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Listing</dt>
+      <dd><%= @listing_photo.listing_id %></dd>
+
+      <dt>Listing photos</dt>
+      <dd><%= @listing_photo.listing_photos %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/listing_photos" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/listing_photos/<%= @listing_photo.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_listing_photo/<%= @listing_photo.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

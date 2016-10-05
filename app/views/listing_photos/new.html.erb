@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @listing_photo.errors.any? %>
+  <% @listing_photo.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Listing Photo</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_listing_photo" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @listing_photo.listing_id %>">
+      </div>
+
+      <!-- Label and input for listing_photos -->
+      <div class="form-group">
+        <label for="listing_photos" class="control-label">
+          Listing photos
+        </label>
+
+        <input type="text" id="listing_photos" name="listing_photos" placeholder="Listing photos" class="form-control" value="<%= @listing_photo.listing_photos %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Listing Photo
+      </button>
+      or
+      <a href="/listing_photos">Cancel</a>
+    </form>
+  </div>
+</div>
