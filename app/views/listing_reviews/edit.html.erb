@@ -1,0 +1,118 @@
+<!-- Validation failure messages -->
+<% if @listing_review.errors.any? %>
+  <% @listing_review.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Listing Review #<%= @listing_review.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_listing_review/<%= @listing_review.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for create_listing_review_date -->
+      <div class="form-group">
+        <label for="create_listing_review_date" class="control-label">
+          Create listing review date
+        </label>
+
+        <input type="text" id="create_listing_review_date" name="create_listing_review_date" placeholder="Create listing review date" class="form-control" value="<%= @listing_review.create_listing_review_date %>">
+      </div>
+
+      <!-- Label and input for reservations_id -->
+      <div class="form-group">
+        <label for="reservations_id" class="control-label">
+          Reservations
+        </label>
+
+        <input type="text" id="reservations_id" name="reservations_id" placeholder="Reservations" class="form-control" value="<%= @listing_review.reservations_id %>">
+      </div>
+
+      <!-- Label and input for listing_review_accuracy -->
+      <div class="form-group">
+        <label for="listing_review_accuracy" class="control-label">
+          Listing review accuracy
+        </label>
+
+        <input type="text" id="listing_review_accuracy" name="listing_review_accuracy" placeholder="Listing review accuracy" class="form-control" value="<%= @listing_review.listing_review_accuracy %>">
+      </div>
+
+      <!-- Label and input for listing_review_communication -->
+      <div class="form-group">
+        <label for="listing_review_communication" class="control-label">
+          Listing review communication
+        </label>
+
+        <input type="text" id="listing_review_communication" name="listing_review_communication" placeholder="Listing review communication" class="form-control" value="<%= @listing_review.listing_review_communication %>">
+      </div>
+
+      <!-- Label and input for listing_review_cleanliness -->
+      <div class="form-group">
+        <label for="listing_review_cleanliness" class="control-label">
+          Listing review cleanliness
+        </label>
+
+        <input type="text" id="listing_review_cleanliness" name="listing_review_cleanliness" placeholder="Listing review cleanliness" class="form-control" value="<%= @listing_review.listing_review_cleanliness %>">
+      </div>
+
+      <!-- Label and input for listing_review_location -->
+      <div class="form-group">
+        <label for="listing_review_location" class="control-label">
+          Listing review location
+        </label>
+
+        <input type="text" id="listing_review_location" name="listing_review_location" placeholder="Listing review location" class="form-control" value="<%= @listing_review.listing_review_location %>">
+      </div>
+
+      <!-- Label and input for listing_review_check_in -->
+      <div class="form-group">
+        <label for="listing_review_check_in" class="control-label">
+          Listing review check in
+        </label>
+
+        <input type="text" id="listing_review_check_in" name="listing_review_check_in" placeholder="Listing review check in" class="form-control" value="<%= @listing_review.listing_review_check_in %>">
+      </div>
+
+      <!-- Label and input for listing_review_value -->
+      <div class="form-group">
+        <label for="listing_review_value" class="control-label">
+          Listing review value
+        </label>
+
+        <input type="text" id="listing_review_value" name="listing_review_value" placeholder="Listing review value" class="form-control" value="<%= @listing_review.listing_review_value %>">
+      </div>
+
+      <!-- Label and input for listing_review_text -->
+      <div class="form-group">
+        <label for="listing_review_text" class="control-label">
+          Listing review text
+        </label>
+
+        <textarea id="listing_review_text" name="listing_review_text" placeholder="Listing review text" class="form-control" rows="3"><%= @listing_review.listing_review_text %></textarea>
+      </div>
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @listing_review.listing_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Listing Review
+      </button>
+      or
+      <a href="/listing_reviews/<%= @listing_review.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

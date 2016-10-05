@@ -1,0 +1,52 @@
+<div class="page-header">
+  <h3>Listing Review #<%= @listing_review.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Create listing review date</dt>
+      <dd><%= @listing_review.create_listing_review_date %></dd>
+
+      <dt>Reservations</dt>
+      <dd><%= @listing_review.reservations_id %></dd>
+
+      <dt>Listing review accuracy</dt>
+      <dd><%= @listing_review.listing_review_accuracy %></dd>
+
+      <dt>Listing review communication</dt>
+      <dd><%= @listing_review.listing_review_communication %></dd>
+
+      <dt>Listing review cleanliness</dt>
+      <dd><%= @listing_review.listing_review_cleanliness %></dd>
+
+      <dt>Listing review location</dt>
+      <dd><%= @listing_review.listing_review_location %></dd>
+
+      <dt>Listing review check in</dt>
+      <dd><%= @listing_review.listing_review_check_in %></dd>
+
+      <dt>Listing review value</dt>
+      <dd><%= @listing_review.listing_review_value %></dd>
+
+      <dt>Listing review text</dt>
+      <dd><%= @listing_review.listing_review_text %></dd>
+
+      <dt>Listing</dt>
+      <dd><%= @listing_review.listing_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/listing_reviews" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/listing_reviews/<%= @listing_review.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_listing_review/<%= @listing_review.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
