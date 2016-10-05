@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @reservation.errors.any? %>
+  <% @reservation.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Reservation</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_reservation" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for availability_date -->
+      <div class="form-group">
+        <label for="availability_date" class="control-label">
+          Availability date
+        </label>
+
+        <input type="text" id="availability_date" name="availability_date" placeholder="Availability date" class="form-control" value="<%= @reservation.availability_date %>">
+      </div>
+
+      <!-- Label and input for availability_price -->
+      <div class="form-group">
+        <label for="availability_price" class="control-label">
+          Availability price
+        </label>
+
+        <input type="text" id="availability_price" name="availability_price" placeholder="Availability price" class="form-control" value="<%= @reservation.availability_price %>">
+      </div>
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @reservation.listing_id %>">
+      </div>
+
+      <!-- Label and input for booked_yes_or_no_id -->
+      <div class="form-group">
+        <label for="booked_yes_or_no_id" class="control-label">
+          Booked yes or no
+        </label>
+
+        <input type="text" id="booked_yes_or_no_id" name="booked_yes_or_no_id" placeholder="Booked yes or no" class="form-control" value="<%= @reservation.booked_yes_or_no_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Reservation
+      </button>
+      or
+      <a href="/reservations">Cancel</a>
+    </form>
+  </div>
+</div>
