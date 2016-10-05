@@ -24,7 +24,7 @@
           Initiated by
         </label>
 
-        <input type="text" id="initiated_by_id" name="initiated_by_id" placeholder="Initiated by" class="form-control" value="<%= @message.initiated_by_id %>">
+        <%= select_tag(:initiated_by_id, options_from_collection_for_select(User.all, :id, :host, @message.initiated_by_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for recipient_id -->
