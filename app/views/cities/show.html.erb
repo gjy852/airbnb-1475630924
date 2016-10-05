@@ -23,3 +23,43 @@
     </div>
   </div>
 </div>
+
+<!-- A City has many listings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listings
+      </li>
+
+      <% @city.listings.each do |listing| %>
+        <li class="list-group-item">
+          <a href="/listings/<%= listing.id %>">
+            <%= listing.listing_title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A City has many neighbourhoods -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Neighbourhoods
+      </li>
+
+      <% @city.neighbourhoods.each do |neighbourhood| %>
+        <li class="list-group-item">
+          <a href="/neighbourhoods/<%= neighbourhood.id %>">
+            <%= neighbourhood.neighbourhoods_list %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

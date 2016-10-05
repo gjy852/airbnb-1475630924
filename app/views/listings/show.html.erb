@@ -59,3 +59,63 @@
     </div>
   </div>
 </div>
+
+<!-- A Listing has many listing_availabilities -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listing_availabilities
+      </li>
+
+      <% @listing.listing_availabilities.each do |reservation| %>
+        <li class="list-group-item">
+          <a href="/reservations/<%= reservation.id %>">
+            <%= reservation.availability_date %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many policies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Policies
+      </li>
+
+      <% @listing.policies.each do |policy| %>
+        <li class="list-group-item">
+          <a href="/policies/<%= policy.id %>">
+            <%= policy.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many listing_photos -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listing_photos
+      </li>
+
+      <% @listing.listing_photos.each do |listing_photo| %>
+        <li class="list-group-item">
+          <a href="/listing_photos/<%= listing_photo.id %>">
+            <%= listing_photo.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
