@@ -1,6 +1,9 @@
 class Request < ApplicationRecord
   # Direct associations
 
+  belongs_to :requestor,
+             :class_name => "User"
+
   has_one    :review_id,
              :class_name => "GuestReview",
              :dependent => :destroy
