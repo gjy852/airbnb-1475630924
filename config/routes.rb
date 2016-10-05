@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "listings#index"
   # Routes for the Policy resource:
   # CREATE
   get "/policies/new", :controller => "policies", :action => "new"
