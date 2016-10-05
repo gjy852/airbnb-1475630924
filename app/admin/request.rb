@@ -1,5 +1,7 @@
 ActiveAdmin.register Request do
 
+ permit_params :requestor_id, :request_text, :request_sent_date, :request_accept_date, :availability_date
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
