@@ -17,7 +17,7 @@
       <% @neighbourhoods.each do |neighbourhood| %>
       <tr>
         <td><%= neighbourhood.neighbourhoods_list %></td>
-        <td><%= neighbourhood.city_id %></td>
+        <td><%= neighbourhood.city.city_name %></td>
         <td>
           <a href="/neighbourhoods/<%= neighbourhood.id %>" class="btn btn-primary">Show</a>
           <a href="/neighbourhoods/<%= neighbourhood.id %>/edit" class="btn btn-warning">Edit</a>
