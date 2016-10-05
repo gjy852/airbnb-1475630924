@@ -51,7 +51,7 @@
           Booked yes or no
         </label>
 
-        <input type="text" id="booked_yes_or_no_id" name="booked_yes_or_no_id" placeholder="Booked yes or no" class="form-control" value="<%= @reservation.booked_yes_or_no_id %>">
+        <%= select_tag(:booked_yes_or_no_id, options_from_collection_for_select(Request.all, :id, :requestor_id, @reservation.booked_yes_or_no_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
