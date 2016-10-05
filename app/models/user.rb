@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :sent_messages,
+             :class_name => "Message",
+             :foreign_key => "initiated_by_id",
+             :dependent => :destroy
+
   has_many   :bookmarks,
              :dependent => :destroy
 
