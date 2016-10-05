@@ -1,5 +1,7 @@
 ActiveAdmin.register Reservation do
 
+ permit_params :availability_date, :availability_price, :listing_id, :booked_yes_or_no_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
