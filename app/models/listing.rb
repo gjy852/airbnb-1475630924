@@ -1,6 +1,8 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  belongs_to :neighbourhood
+
   belongs_to :city
 
   belongs_to :host,
